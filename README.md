@@ -50,7 +50,7 @@ API Documentation
 get HomeValue summary
 
 
-Get Method:
+ Get method
 . GET /api/homeValueSummary/${id}
 . url Params id = interger 
 . res
@@ -89,7 +89,8 @@ Get Method:
   .call
     - ajax.post{
     `/api/homeValueSummary/${addressSummary.length + 1}`
-    
+   
+   `
    Update method 
    .put  /homeValuesummary/${id}
    . Data params  oject of homeValueSummary array
@@ -99,6 +100,7 @@ Get Method:
     - ajax.put{
     '/api/homeValueSummary/${id}'
     }
+    `
     
     Delete method
     .Delete /api/homeVauleSummary/${id}
