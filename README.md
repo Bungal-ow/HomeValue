@@ -56,6 +56,8 @@ get HomeValue summary
    . res
     - status 200 {did get request}
     - data example : [
+   
+   
    `{
       id: 1,
      'addressSummary': {
@@ -68,9 +70,9 @@ get HomeValue summary
               currentestimatedvalue: 1414296,
               pictureurl: 'https: //abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
       },
-      date: 2010-1-18
-      historyHomeValue:196490
-      historyAeraValue:196492
+      date: 2010-1-18,
+      historyHomeValue:196490,
+      historyAeraValue:196492,
       historyCityValue:196434
   } `
      ]
