@@ -1,17 +1,4 @@
-# Abode
-- [Product page](http://3.135.19.247/)
-- Module: Home Value:
-- Usage: This module is used to replicate Zillow's Home Value feature.
-- Instruction: follow the instructions in the Table of Contents in sequential order.
 
-
-# Table of Contents
-- Development requirements
-- Environment set up
-- Data creation and seeding
-- Build the bundle file
-- Server set up
-- Accessing the service
 
 ## Requirements
 - Node 6.13.0
@@ -54,3 +41,72 @@ Run this command in the CLI (in this module's root directorate):
 ## Accessing the service
 Go to your browser (preferrably Google Chrome) and type in:
 - http://localhost:3333
+
+
+Adode Property System Design
+
+API Documentation
+
+get HomeValue summary
+
+
+Get Method:
+. GET /api/homeValueSummary/${id}
+. url Params id = interger 
+. res
+    - status 200 {did get request}
+    - data example
+   homeValueSummary 
+   [
+      {
+      id: 1,
+      'addressSummary': {
+      address: '83032 Jennyfer Way Swift Motorway, Rathside, Pennsylvania, 80835',
+      zipcode: 80835,
+      on_market: 'false',
+      sqft: 3456,
+      bed: 4,
+      bath: 1,
+      currentestimatedvalue: 1414296,
+      pictureurl: 'https://abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
+  },
+  'addressValues': [value1, value2, value3...],
+  'similarAddresses': [addresse1, addresse2, addresse3...]
+}
+
+]
+.call
+  - ajax.get(
+   “/api/homeValueSummary/${id}”
+  )
+  
+  Add method 
+   . POST /api/homeValueSummary/${addressSummary.length + 1}
+   . Data params  oject of homeValueSummary array
+   . Response 
+      - status : 200
+      - content { successfully added New home}
+  .call
+    - ajax.post{
+    `/api/homeValueSummary/${addressSummary.length + 1}`
+    
+   Update method 
+   .put  /homeValuesummary/${id}
+   . Data params  oject of homeValueSummary array
+   . Response 
+      - status : 200
+      - content { successfully update homeValue}
+    - ajax.put{
+    '/api/homeValueSummary/${id}'
+    }
+    
+    Delete method
+    .Delete /api/homeVauleSummary/${id}
+    .Response
+     -status : 200
+     - content {successfully delete homevauleSummary by id}
+     - ajax.delete{
+      `/api/homeValueSummary/${id}
+     }
+
+
