@@ -56,7 +56,7 @@ get HomeValue summary
    . res
     - status 200 {did get request}
     - data example : [
-  {
+   `{
       id: 1,
      'addressSummary': {
               address: '83032 Jennyfer Way Swift Motorway, Rathside, Pennsylvania,80835',
@@ -68,12 +68,13 @@ get HomeValue summary
               currentestimatedvalue: 1414296,
               pictureurl: 'https: //abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
       },
-      'addressValues': [value1, value2, value3...],
-      'similarAddresses': [addresse1, addresse2, addresse3...]
-  }
-      ]
+      date: 2010-1-18
+      historyHomeValue:196490
+      historyAeraValue:196492
+      historyCityValue:196434
+  } `
+     ]
 
-]
   - ajax.get(
    “/api/homeValueSummary/${id}”
   )
