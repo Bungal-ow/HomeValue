@@ -55,24 +55,23 @@ get HomeValue summary
    . url Params id = interger 
    . res
     - status 200 {did get request}
-    - data example
-   homeValueSummary 
-   [
-      {
+    - data example : [
+  {
       id: 1,
-      'addressSummary': {
-      address: '83032 Jennyfer Way Swift Motorway, Rathside, Pennsylvania, 80835',
-      zipcode: 80835,
-      on_market: 'false',
-      sqft: 3456,
-      bed: 4,
-      bath: 1,
-      currentestimatedvalue: 1414296,
-      pictureurl: 'https://abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
-  },
-  'addressValues': [value1, value2, value3...],
-  'similarAddresses': [addresse1, addresse2, addresse3...]
-}
+     'addressSummary': {
+              address: '83032 Jennyfer Way Swift Motorway, Rathside, Pennsylvania,80835',
+              zipcode: 80835,
+              on_market: 'false',
+              sqft: 3456,
+              bed: 4,
+              bath: 1,
+              currentestimatedvalue: 1414296,
+              pictureurl: 'https: //abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
+      },
+      'addressValues': [value1, value2, value3...],
+      'similarAddresses': [addresse1, addresse2, addresse3...]
+  }
+      ]
 
 ]
   - ajax.get(
