@@ -50,10 +50,10 @@ API Documentation
 get HomeValue summary
 
 
- Get method
-. GET /api/homeValueSummary/${id}
-. url Params id = interger 
-. res
+  Get Method
+   . GET /api/homeValueSummary/${id}
+   . url Params id = interger 
+   . res
     - status 200 {did get request}
     - data example
    homeValueSummary 
@@ -75,32 +75,31 @@ get HomeValue summary
 }
 
 ]
-.call
   - ajax.get(
    “/api/homeValueSummary/${id}”
   )
   
-  Add method 
-   . POST /api/homeValueSummary/${addressSummary.length + 1}
-   . Data params  oject of homeValueSummary array
-   . Response 
+    Add method 
+     . POST /api/homeValueSummary/${addressSummary.length + 1}
+    . Data params  oject of homeValueSummary array
+    . Response 
       - status : 200
       - content { successfully added New home}
-  .call
+    .call
     - ajax.post{
     `/api/homeValueSummary/${addressSummary.length + 1}`
    
-   `
-   Update method 
-   .put  /homeValuesummary/${id}
-   . Data params  oject of homeValueSummary array
-   . Response 
+   
+    Update method 
+    .put  /homeValuesummary/${id}
+    . Data params  oject of homeValueSummary array
+    . Response 
       - status : 200
       - content { successfully update homeValue}
     - ajax.put{
     '/api/homeValueSummary/${id}'
     }
-    `
+    
     
     Delete method
     .Delete /api/homeVauleSummary/${id}
