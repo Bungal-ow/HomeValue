@@ -51,7 +51,7 @@ get HomeValue summary
 
 
   Get Method
-   . GET /api/homeValueSummary/${id}
+   . GET /api/home/${id}
    . url Params id = interger 
    . res
     - status 200 {did get request}
@@ -82,14 +82,14 @@ get HomeValue summary
   )
   
     Add method 
-     . POST /api/homeValueSummary/${addressSummary.length + 1}
+     . POST /api/home
     . Data params  oject of homeValueSummary array
     . Response 
       - status : 200
       - content { successfully added New home}
     .call
     - ajax.post{
-    `/api/homeValueSummary/${addressSummary.length + 1}`
+    `/api/home`
    
    
     Update method 
@@ -99,17 +99,17 @@ get HomeValue summary
       - status : 200
       - content { successfully update homeValue}
     - ajax.put{
-    '/api/homeValueSummary/${id}'
+    '/api/home/${id}'
     }
     
     
     Delete method
-    .Delete /api/homeVauleSummary/${id}
+    .Delete /api/home/${id}
     .Response
      -status : 200
      - content {successfully delete homevauleSummary by id}
      - ajax.delete{
-      `/api/homeValueSummary/${id}
+      `/api/home/${id}
      }
 
 
