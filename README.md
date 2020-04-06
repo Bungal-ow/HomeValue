@@ -78,7 +78,7 @@ get HomeValue summary
      ]
 
   - ajax.get(
-   “/api/homeValueSummary/${id}”
+   “/api/home/${id}”
   )
   
     Add method 
@@ -93,7 +93,7 @@ get HomeValue summary
    
    
     Update method 
-    .put  /homeValuesummary/${id}
+    .put  /home/${id}
     . Data params  oject of homeValueSummary array
     . Response 
       - status : 200
