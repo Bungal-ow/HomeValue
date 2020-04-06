@@ -2,6 +2,7 @@ const mysql = require('mysql');
 
 const db = mysql.createConnection({
   user: 'root',
+  password: 's62461591',
   database: 'homevalue_pricetax',
 });
 

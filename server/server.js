@@ -6,7 +6,7 @@ const { model } = require('./model');
 
 const app = express();
 
-const port = 3333;
+const port = 4444;
 
 app.use(morgan('dev'));
 

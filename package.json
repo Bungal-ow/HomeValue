@@ -8,8 +8,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "build": "webpack --watch",
-    "start": "nodemon server/server.js",
-    "seeder": "node server/fakeDataSeeder.js"
+    "start": "node server/server.js",
+    "seeder": "node server/fakeDataSeederForMongo.js"
   },
   "repository": {
     "type": "git",
@@ -54,11 +54,13 @@
   "dependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
-    "css-loader": "^3.4.2",
+    "css-loader": "^2.1.0",
+    "csv-writer": "^1.6.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jquery": "^3.4.1",
     "mysql": "^2.18.1",
+    "node": "^6.13.0",
     "regenerator-runtime": "^0.13.3",
     "style-loader": "^1.1.3",
     "svg-url-loader": "^5.0.0"
