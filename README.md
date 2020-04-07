@@ -1,17 +1,4 @@
-# Abode
-- [Product page](http://3.135.19.247/)
-- Module: Home Value:
-- Usage: This module is used to replicate Zillow's Home Value feature.
-- Instruction: follow the instructions in the Table of Contents in sequential order.
 
-
-# Table of Contents
-- Development requirements
-- Environment set up
-- Data creation and seeding
-- Build the bundle file
-- Server set up
-- Accessing the service
 
 ## Requirements
 - Node 6.13.0
@@ -54,3 +41,75 @@ Run this command in the CLI (in this module's root directorate):
 ## Accessing the service
 Go to your browser (preferrably Google Chrome) and type in:
 - http://localhost:3333
+
+
+Adode Property System Design
+
+API Documentation
+
+get HomeValue summary
+
+
+  Get Method
+   . GET /api/home/${id}
+   . url Params id = interger 
+   . res
+    - status 200 {did get request}
+    - data example : [
+   
+   
+   `{
+      id: 1,
+     'addressSummary': {
+              address: '83032 Jennyfer Way Swift Motorway, Rathside, Pennsylvania,80835',
+              zipcode: 80835,
+              on_market: 'false',
+              sqft: 3456,
+              bed: 4,
+              bath: 1,
+              currentestimatedvalue: 1414296,
+              pictureurl: 'https: //abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
+      },
+      date: 2010-1-18,
+      historyHomeValue:196490,
+      historyAeraValue:196492,
+      historyCityValue:196434
+  } `
+     ]
+
+  - ajax.get(
+   “/api/home/${id}”
+  )
+  
+    Add method 
+     . POST /api/home
+    . Data params  oject of homeValueSummary array
+    . Response 
+      - status : 200
+      - content { successfully added New home}
+    .call
+    - ajax.post{
+    `/api/home`
+   
+   
+    Update method 
+    .put  /home/${id}
+    . Data params  oject of homeValueSummary array
+    . Response 
+      - status : 200
+      - content { successfully update homeValue}
+    - ajax.put{
+    '/api/home/${id}'
+    }
+    
+    
+    Delete method
+    .Delete /api/home/${id}
+    .Response
+     -status : 200
+     - content {successfully delete homevauleSummary by id}
+     - ajax.delete{
+      `/api/home/${id}
+     }
+
+
