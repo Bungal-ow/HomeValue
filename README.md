@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 local change
-=======
  XXXX
->>>>>>> 301cb07d20f9c4e4144f22da73620747f7ec3634
 
 ## Requirements
 - Node 6.13.0
