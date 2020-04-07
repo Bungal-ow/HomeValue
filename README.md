@@ -52,11 +52,10 @@ get HomeValue summary
 
 
   Get Method
-   . GET /api/home/${id}
-   . url Params id = interger 
-   . res
-    - status 200 {did get request}
-    - data example : [
+   - GET /api/home/${id}
+   - url Params id = interger 
+   - res status 200 {did get request}
+   - data example : [
    
    
    `{
