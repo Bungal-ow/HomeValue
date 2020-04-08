@@ -8,7 +8,7 @@ const pictureURL = `https://mysdcphotos.s3-us-west-1.amazonaws.com/photo/File+`
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
-  path: './fakeData/homes.csv',
+  path: './fakeData/homes5.csv',
   header:[
     {id:'id', title: 'id'},
     {id:'address', title: 'address'},
@@ -24,17 +24,18 @@ const csvWriter = createCsvWriter({
 
 
 let homesProperties = [];
-let numberOfHomes = 10000;
+let numberOfHomes = 10000004
+;
 
 const generateData = () => {
-  for (var i = 0; i <= numberOfHomes; i++) {
+  for (var i = 5000004; i <= numberOfHomes; i++) {
     const address = faker.fake(`{{address.streetAddress}}, {{address.city}}, {{address.state}}`);
     const zipCode = faker.address.zipCode().slice(0, 5);
     const onMarket = faker.random.boolean();
     const sqft = faker.random.number({ min: 500, max: 10000 });
     const bedCount = faker.random.number({ min: 1, max: 10 });
     const bathCount = faker.random.number({ min: 1, max: 10 });
-    const currentEstimatedValue = faker.random.number({ min: 200000, max: 5000000 });
+    const listingValue = faker.random.number({ min: 200000, max: 5000000 });
     const pictureUrl = `${pictureURL}${i+1}.jpg`;
     
     let homesProperty = {
@@ -45,7 +46,7 @@ const generateData = () => {
       sqft: sqft,
       bedCount: bedCount,
       bathCount: bathCount,
-      currentEstimatedValue: currentEstimatedValue,
+      listingValue: listingValue,
       pictureUrl: pictureUrl
     };
 

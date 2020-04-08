@@ -16,7 +16,7 @@ let homeValueSchema = mongoose.Schema({
   sqdtCount: Number,
   bedCount: Number,
   bathCount: Number,
-  currentEstimatedValue: Number,
+  listingValue: Number,
   pictureUrl: String,
   date: String,
   estimatedHomeValue: Number,
