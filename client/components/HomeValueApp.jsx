@@ -31,7 +31,7 @@ class HomeValueApp extends React.Component {
   componentDidMount() {
     $.ajax({
       type: 'get',
-      url: '/exampleHomeSummary/',
+      url: '/api/home/:zipcode',
       data: {
         address: 'initial query',
         zipCode: 12345,
