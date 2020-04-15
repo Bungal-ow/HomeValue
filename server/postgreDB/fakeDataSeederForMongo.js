@@ -4,11 +4,11 @@ const pictureURL = `https://mysdcphotos.s3-us-west-1.amazonaws.com/photo/File+`
 
 
 
-
+//let getRandomArbitrary = Math.floor(Math.random() * (763 - 1) + 1);
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
-  path: './fakeData/homes5.csv',
+  path: './fakeData/homes1.csv',
   header:[
     {id:'id', title: 'id'},
     {id:'address', title: 'address'},
@@ -24,11 +24,12 @@ const csvWriter = createCsvWriter({
 
 
 let homesProperties = [];
-let numberOfHomes = 10000004
+let numberOfHomes = 1000000
 ;
 
 const generateData = () => {
-  for (var i = 5000004; i <= numberOfHomes; i++) {
+  for (var i = 1; i <= numberOfHomes; i++) {
+    const randomurl = faker.random.number({min:1, max:750})
     const address = faker.fake(`{{address.streetAddress}}, {{address.city}}, {{address.state}}`);
     const zipCode = faker.address.zipCode().slice(0, 5);
     const onMarket = faker.random.boolean();
@@ -36,7 +37,7 @@ const generateData = () => {
     const bedCount = faker.random.number({ min: 1, max: 10 });
     const bathCount = faker.random.number({ min: 1, max: 10 });
     const listingValue = faker.random.number({ min: 200000, max: 5000000 });
-    const pictureUrl = `${pictureURL}${i+1}.jpg`;
+    const pictureUrl = `${pictureURL}${randomurl}.jpg`;
     
     let homesProperty = {
       id: i,

@@ -29,7 +29,7 @@ class ComparableHomeModelEntry extends React.Component {
     // test if the correct data is being sent
     $.ajax({
       type: 'get',
-      url: '/exampleHomeSummary/',
+      url: '/api/home/:zipcode',
       data: {
         address: this.props.addressSummary.address,
         zipCode: this.props.addressSummary.zipcode,
@@ -56,6 +56,7 @@ class ComparableHomeModelEntry extends React.Component {
   }
 
   render() {
+    console.log("dsdsdsdssssssssssss",this.props.addressSummary.bedCount)
     return (
       // test if the below render
       // <div>{JSON.stringify(this.props.addressSummary)}</div>
@@ -69,17 +70,17 @@ class ComparableHomeModelEntry extends React.Component {
         </div>
         <div className={styles.homeSummary}>
           <div className={styles.homeValue}>
-            <div>${new Intl.NumberFormat().format(this.props.addressSummary.currentestimatedvalue)}</div>
+            <div>${new Intl.NumberFormat().format(this.props.addressSummary.listingvalue)}</div>
             <div className={styles.forSale}>
               <img className={styles.icon} src={this.state.saleIcon}></img></div>
           </div>
           <div className={styles.homeValuePerSqft}>
-            ${new Intl.NumberFormat().format((this.props.addressSummary.currentestimatedvalue / this.props.addressSummary.sqft).toFixed(2))}/sqft
+            ${new Intl.NumberFormat().format((this.props.addressSummary.listingvalue / this.props.addressSummary.sqft).toFixed(2))}/sqft
             </div>
           <div className={styles.homeDetails}>
-            <span className={styles.detailNumber}>{this.props.addressSummary.bed}</span> <span> bd</span>
+            <span className={styles.detailNumber}>{this.props.addressSummary.bedcount}</span> <span> bd</span>
             <div className={styles.detailSpacing}></div>
-            <span className={styles.detailNumber}>{this.props.addressSummary.bath}</span><span> ba</span>
+            <span className={styles.detailNumber}>{this.props.addressSummary.bathcount}</span><span> ba</span>
             <div className={styles.detailSpacing}></div>
             <span className={styles.detailNumber}>{this.props.addressSummary.sqft}</span> <span> sqft</span>
           </div>

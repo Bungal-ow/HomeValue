@@ -26,24 +26,34 @@ class HomeValueApp extends React.Component {
     this.hideBestimateModal = this.hideBestimateModal.bind(this);
     this.showBestimateSaleRangeModal = this.showBestimateSaleRangeModal.bind(this);
     this.hideBestimateSaleRangeModal = this.hideBestimateSaleRangeModal.bind(this);
+  
   }
 
   componentDidMount() {
     $.ajax({
       type: 'get',
       url: '/api/home/:zipcode',
-      data: {
-        address: 'initial query',
-        zipCode: 12345,
-      },
       success: (result) => this.setState({
-        addressSummary: result.addressSummary,
-        addressValues: result.addressValues,
-        similarAddresses: result.similarAddresses,
+        addressSummary: result[0],
+        addressValues: result[0].listingvalue,
+        similarAddresses: result,
         hasData: true,
       }),
     });
   }
+
+//   getHomedata(){
+//     $.get(`/api/home/:zipcode`, (rows) => {
+//         this.setState({
+//           addressSummary: rows[0],
+//           addressValues: result[0].listingvalue,
+//           similarAddresses: result,
+//           hasData: true
+//         })
+//     })
+// }
+
+
 
   // test onclick targetting the right 'this'
   onClickHandler(event) {
@@ -57,9 +67,9 @@ class HomeValueApp extends React.Component {
 
   onClickNewAddressHandler(result) {
     this.setState({
-      addressSummary: result.addressSummary,
-      addressValues: result.addressValues,
-      similarAddresses: result.similarAddresses,
+      addressSummary: result[0],
+      addressValues: result[0].listingvalue,
+      similarAddresses: result,
       hasData: true,
     });
   }
@@ -94,17 +104,17 @@ class HomeValueApp extends React.Component {
 
   render() {
     if (this.state.hasData) {
-      // console.log(this.state);
+       console.log("aadsdsadsqd",this.state.addressSummary);
       let bestimate = 0;
-      let bestimateRangeLow = this.state.addressSummary.currentestimatedvalue;
-      let bestimateRangeHigh = this.state.addressSummary.currentestimatedvalue;
+      let bestimateRangeLow = this.state.addressValues
+      let bestimateRangeHigh = this.state.addressValues
       for (let i = 0; i < this.state.similarAddresses.length; i += 1) {
-        bestimate += this.state.similarAddresses[i].currentestimatedvalue;
-        if (this.state.similarAddresses[i].currentestimatedvalue < bestimateRangeLow) {
-          bestimateRangeLow = this.state.similarAddresses[i].currentestimatedvalue;
+        bestimate += this.state.similarAddresses[i].listingvalue;
+        if (this.state.similarAddresses[i].listingvalue < bestimateRangeLow) {
+          bestimateRangeLow = this.state.similarAddresses[i].listingvalue;
         }
-        if (this.state.similarAddresses[i].currentestimatedvalue > bestimateRangeHigh) {
-          bestimateRangeHigh = this.state.similarAddresses[i].currentestimatedvalue;
+        if (this.state.similarAddresses[i].addressValues > bestimateRangeHigh) {
+          bestimateRangeHigh = this.state.similarAddresses[i].addressValues;
         }
       }
       bestimate /= this.state.similarAddresses.length;
@@ -114,7 +124,7 @@ class HomeValueApp extends React.Component {
       // console.log(this.props.similarAddresses);
       for (let i = 0; i < this.state.similarAddresses.length; i += 1) {
         if (this.state.similarAddresses[i].on_market === "false") {
-          offMarketModelEstimate += this.state.similarAddresses[i].currentestimatedvalue;
+          offMarketModelEstimate += this.state.similarAddresses[i].addressValues;
           offMarketCount += 1;
         }
       }
