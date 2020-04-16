@@ -9,7 +9,7 @@
     "test:coverage": "jest --coverage --colors",
     "build": "webpack --watch",
     "start": "node server/server.js",
-    "seeder": "node --max-old-space-size=16000 server/fakeDataSeederForMongo.js"
+    "seeder": "node --max-old-space-size=32000 server/postgreDB/fakeDataSeederForMongo.js"
   },
   "repository": {
     "type": "git",
