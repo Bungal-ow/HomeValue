@@ -1,3 +1,4 @@
+
 const faker = require('faker');
 const fs = require('fs');
 const pictureURL = `https://mysdcphotos.s3-us-west-1.amazonaws.com/photo/File+`
@@ -24,7 +25,8 @@ const csvWriter = createCsvWriter({
 
 
 let homesProperties = [];
-let numberOfHomes = 1000000
+
+let numberOfHomes = 50;
 ;
 
 const generateData = () => {
