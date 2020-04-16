@@ -22,7 +22,10 @@ CREATE TABLE homes (
 
 
 COPY homes (id, address, zipCode, onMarket, sqft, bedCount, bathCount, listingValue, pictureUrl) 
-FROM '/Users/alexcai/Desktop/SEC/abode-homevalue-pricetax/fakeData/homes1.csv' DELIMITER',' CSV HEADER;
+FROM '/local/homes6.csv' DELIMITER',' CSV HEADER;
 
+
+COPY homes (id, address, zipCode, onMarket, sqft, bedCount, bathCount, listingValue, pictureUrl) 
+FROM '/local/homes7.csv' DELIMITER',' CSV HEADER;
 -- COPY homes (id, address, zipCode, onMarket, sqft, bedCount, bathCount, listingValue, pictureUrl) 
 -- FROM '/Users/alexcai/Desktop/SEC/abode-homevalue-pricetax/fakeData/homes5.csv' DELIMITER',' CSV HEADER;

@@ -29,7 +29,7 @@ class ComparableHomeModelEntry extends React.Component {
     // test if the correct data is being sent
     $.ajax({
       type: 'get',
-      url: '/api/home/:zipcode',
+      url: 'ec2-54-215-248-92.us-west-1.compute.amazonaws.com',
       data: {
         address: this.props.addressSummary.address,
         zipCode: this.props.addressSummary.zipcode,
