@@ -32,7 +32,7 @@ class HomeValueApp extends React.Component {
   componentDidMount() {
     $.ajax({
       type: 'get',
-      url: 'ec2-54-193-46-25.us-west-1.compute.amazonaws.com',
+      url: 'http://ec2-54-193-46-25.us-west-1.compute.amazonaws.com:4000/api/home/:zipcode',
 
       success: (result) => this.setState({
         addressSummary: result[0],
