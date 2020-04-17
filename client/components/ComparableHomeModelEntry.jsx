@@ -1,4 +1,5 @@
 import React from 'react';
+
 import $ from 'jquery';
 import SignInModal from './SignInModal.jsx';
 import styles from '../style/ComparableHomeModelEntry.css';
@@ -29,7 +30,7 @@ class ComparableHomeModelEntry extends React.Component {
     // test if the correct data is being sent
     $.ajax({
       type: 'get',
-      url: 'ec2-54-215-248-92.us-west-1.compute.amazonaws.com',
+      url: 'ec2-54-193-46-25.us-west-1.compute.amazonaws.com',
       data: {
         address: this.props.addressSummary.address,
         zipCode: this.props.addressSummary.zipcode,

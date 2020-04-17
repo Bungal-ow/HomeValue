@@ -2,8 +2,13 @@ const pg = require('pg');
 
 const pool = new pg.Pool({
   user: 'alexcai',
-  host: 'localhost',
-  database: 'homevalue'
+  host: '54.215.248.92',
+  database: 'homevalue',
+  password: '62461591',
+  port: 5432,	
+
+
+
 });
 
 
